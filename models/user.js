@@ -9,7 +9,7 @@ const userSchema = new Schema({
 
 // on save hook, encrypt password
 userSchema.pre('save', function(next) {
-  const User = this;
+  const user = this;
 
   bcrypt.genSalt(10, function(err, salt) {
     if (err) { return next(err); }
